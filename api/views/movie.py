@@ -10,11 +10,19 @@ from api.serializers.movie import MovieSerializer, MovieVoteSerializer
 
 class MovieListCreate(generics.ListCreateAPIView):
     """
-    list:
-        Return all movies, ordered by created date
+    get:
+        Returns all user submitted movies
 
-    create:
-        Create new movie
+        Publicly accessible: Yes
+        Default ordering: created date (DESC)
+        Available ordering: created, title, likes, hates
+        Available filters: user_id
+
+    post:
+        Submits a new movie
+
+        Publicly accessible: No
+        Required parameters: title
     """
 
     permission_classes = (AuthenticatedCreate,)
@@ -47,17 +55,35 @@ class MovieListCreate(generics.ListCreateAPIView):
 
 class MovieVoteListCreateUpdateDelete(generics.ListCreateAPIView, generics.UpdateAPIView, generics.DestroyAPIView):
     """
-    list:
-        Return all votes for a movie, ordered by created date
+    get:
+        Returns all votes for the requested movie
 
-    create:
-        Create new vote for a movie
+        Publicly accessible: No
+        Default ordering: created date (DESC)
+        Available filters: reaction
 
-    partial_update:
-        Update a movie vote
+    post:
+        Creates a new vote for the requested movie
+
+        Publicly accessible: No
+        Required parameters: reaction
+
+    put:
+        Updates the vote for the requested movie
+
+        Publicly accessible: No
+        Required parameters: reaction
+
+    patch:
+        Updates the vote for the requested movie
+
+        Publicly accessible: No
+        Required parameters: reaction
 
     delete:
-        Delete a movie vote
+        Deletes the vote for the requested movie
+
+        Publicly accessible: No
     """
 
     permission_classes = (IsAuthenticated,)

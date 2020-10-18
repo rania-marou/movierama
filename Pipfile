@@ -5,6 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 coverage = "==5.3.*"
+pyyaml = "==5.3.*"
+uritemplate = "==3.0.*"
+drf-yasg2 = "==1.19.*"
 
 [packages]
 django = "==3.1.*"

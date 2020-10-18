@@ -6,11 +6,18 @@ from api.serializers.user import UserSerializer
 
 class UserListCreate(generics.ListCreateAPIView):
     """
-    list:
-        Return all users, ordered by created date
+    get:
+        Returns all registered users
 
-    create:
-        Create new user
+        Publicly accessible: Yes
+        Default ordering: created date (DESC)
+        Available ordering: first_name, last_name, created
+
+    post:
+        Registers a new user
+
+        Publicly accessible: Yes
+        Required parameters: first_name, last_name, username, email, password
     """
 
     serializer_class = UserSerializer
@@ -21,8 +28,10 @@ class UserListCreate(generics.ListCreateAPIView):
 
 class UserDetail(generics.RetrieveAPIView):
     """
-    retrieve:
-        Retrieve the user
+    get:
+        Retrieves the requested user
+
+        Publicly accessible: Yes
     """
 
     serializer_class = UserSerializer

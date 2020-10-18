@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  movierama:
+    build: .
+    container_name: movierama-local
+    ports:
+      - "8000:8000"
+    environment:
+      DEBUG: 1
+    command: /server/start.sh

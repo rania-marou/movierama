@@ -1,0 +1,152 @@
+[
+  {
+    "model": "api.vote",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "movie": 3,
+      "reaction": "like",
+      "created": "2020-10-18T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "movie": 5,
+      "reaction": "like",
+      "created": "2020-10-18T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "movie": 6,
+      "reaction": "hate",
+      "created": "2020-10-18T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "movie": 9,
+      "reaction": "like",
+      "created": "2020-10-18T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "movie": 1,
+      "reaction": "like",
+      "created": "2020-10-19T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "movie": 2,
+      "reaction": "hate",
+      "created": "2020-10-19T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "movie": 5,
+      "reaction": "hate",
+      "created": "2020-10-19T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "movie": 6,
+      "reaction": "like",
+      "created": "2020-10-19T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "movie": 8,
+      "reaction": "like",
+      "created": "2020-10-19T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "movie": 10,
+      "reaction": "like",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 11,
+    "fields": {
+      "user": 3,
+      "movie": 1,
+      "reaction": "hate",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 12,
+    "fields": {
+      "user": 3,
+      "movie": 2,
+      "reaction": "like",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 13,
+    "fields": {
+      "user": 3,
+      "movie": 8,
+      "reaction": "like",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 14,
+    "fields": {
+      "user": 3,
+      "movie": 9,
+      "reaction": "hate",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.vote",
+    "pk": 15,
+    "fields": {
+      "user": 3,
+      "movie": 10,
+      "reaction": "like",
+      "created": "2020-10-20T12:00:00Z"
+    }
+  }
+]

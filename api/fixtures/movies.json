@@ -1,0 +1,112 @@
+[
+  {
+    "model": "api.movie",
+    "pk": 1,
+    "fields": {
+      "title": "Madagascar",
+      "description": "A group of animals who have spent all their life in a New York zoo end up in the jungles of Madagascar, and must adjust to living in the wild.",
+      "user": 1,
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 2,
+    "fields": {
+      "title": "Ice Age",
+      "description": "Set during the Ice Age, a sabertooth tiger, a sloth, and a wooly mammoth find a lost human infant, and they try to return him to his tribe.",
+      "user": 1,
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 3,
+    "fields": {
+      "title": "Despicable me",
+      "description": "When a criminal mastermind uses a trio of orphan girls as pawns for a grand scheme, he finds their love is profoundly changing him for the better.",
+      "user": 2,
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 4,
+    "fields": {
+      "title": "The Penguins of Madagascar",
+      "description": "The daily adventures of penguins living in New York's Central Park Zoo.",
+      "user": 2,
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 5,
+    "fields": {
+      "title": "Minions",
+      "description": "Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+      "user": 3,
+      "created": "2020-10-16T12:00:00Z",
+      "updated": "2020-10-16T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 6,
+    "fields": {
+      "title": "Megamind",
+      "description": "The supervillain Megamind finally defeats his nemesis, the superhero Metro Man. But without a hero, he loses all purpose and must find new meaning to his life.",
+      "user": 3,
+      "created": "2020-10-16T12:00:00Z",
+      "updated": "2020-10-16T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 7,
+    "fields": {
+      "title": "Cloudy With A Chance Of Meatballs",
+      "description": "A local scientist is often regarded as a failure until he invents a machine that can make food fall from the sky. But little does he know, that things are about to take a turn for the worst.",
+      "user": 3,
+      "created": "2020-10-16T12:00:00Z",
+      "updated": "2020-10-16T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 8,
+    "fields": {
+      "title": "Up",
+      "description": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",
+      "user": 4,
+      "created": "2020-10-17T12:00:00Z",
+      "updated": "2020-10-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 9,
+    "fields": {
+      "title": "Tangled",
+      "description": "The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.",
+      "user": 4,
+      "created": "2020-10-17T12:00:00Z",
+      "updated": "2020-10-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.movie",
+    "pk": 10,
+    "fields": {
+      "title": "How to train your dragon",
+      "description": "Launches gamers into a third-person action-adventure as a Viking hero where they must embark upon an epic quest to become the ultimate dragon trainer.",
+      "user": 4,
+      "created": "2020-10-17T12:00:00Z",
+      "updated": "2020-10-17T12:00:00Z"
+    }
+  }
+]

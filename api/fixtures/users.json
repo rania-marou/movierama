@@ -1,0 +1,72 @@
+[
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$ixPeuc1fv85L$iGskSf86kQUwz07FntqOfqULMS4IqfxNWF3f9DdlzPM=",
+      "last_login": null,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "username": "jane",
+      "email": "jane@movierama.com",
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$Gju1PgchIJUz$StBcFsSzxjIqZNHkjD8FGRGswJuPws9IBof0h3Jz1No=",
+      "last_login": null,
+      "first_name": "John",
+      "last_name": "Doe",
+      "username": "john",
+      "email": "john@movierama.com",
+      "created": "2020-10-15T12:00:00Z",
+      "updated": "2020-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$x3a457riFdFX$4tAfLkMV5gZ5rFNKmcDAAxDbS7mh999lytynUvgTDMM=",
+      "last_login": null,
+      "first_name": "George",
+      "last_name": "Doe",
+      "username": "george",
+      "email": "george@movierama.com",
+      "created": "2020-10-16T12:00:00Z",
+      "updated": "2020-10-16T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$DyhEVl7kG0YV$txlidMOG+AHPgSA0WPwhXAnw/XTINAfxg16jPP2ktNU=",
+      "last_login": null,
+      "first_name": "Kelly",
+      "last_name": "Doe",
+      "username": "kelly",
+      "email": "kelly@movierama.com",
+      "created": "2020-10-17T12:00:00Z",
+      "updated": "2020-10-17T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$ncd04ZpsqSOz$/WbeU1BtmJZyE2pzPs4YkJB+9o2I153MI4uIWRuxpiM=",
+      "last_login": null,
+      "first_name": "Mike",
+      "last_name": "Doe",
+      "username": "mike",
+      "email": "mike@movierama.com",
+      "created": "2020-10-17T12:00:00Z",
+      "updated": "2020-10-17T12:00:00Z"
+    }
+  }
+]

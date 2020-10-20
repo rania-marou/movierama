@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Movierama · Movies</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="js/main.js"></script>
+    <script>
+        async function displayLogin() {
+            let html = '';
+            let user_id = getCookie("user_id");
+            if (user_id !== null) {
+                let user = await fetchAPI("/api/users/" + user_id, "GET");
+                if (user.id) {
+                    html += '<h2>Hello ' + user.first_name + '!</h2>';
+                    html += '<a href="javascript:logout();">Logout</a><br>';
+                    html += '<button type="button" class="btn btn-primary" onclick=\'openModal()\'>Add movie</button>';
+                }
+            } else {
+                html += '<a href="login.html">Login</a> or <a href="signup.html">Register</a>';
+            }
+            document.getElementById('nav').innerHTML = html;
+        }
+
+        async function voteMovie(movie_id, reaction) {
+            let data = {"reaction": reaction}
+            let vote = await fetchAPI("/api/movies/" + movie_id + "/votes", "POST", JSON.stringify(data));
+            if (vote !== null && 'created' in vote && vote.created) {
+                await getMovies();
+            } else {
+                alert("Error while voting")
+            }
+        }
+
+        async function unVote(movie_id) {
+            await fetchAPI("/api/movies/" + movie_id + "/votes", "DELETE");
+            await getMovies();
+        }
+
+        async function logout() {
+            deleteCookie("jwt");
+            deleteCookie("user_id");
+            await displayLogin()
+            await getMovies();
+        }
+
+        async function addMovie() {
+            let data = {};
+            data['title'] = document.getElementById('inputTitle').value;
+            data['description'] = document.getElementById('inputDescription').value;
+            let response = await fetchAPI("/api/movies", "POST", JSON.stringify(data));
+            if (response.id) {
+                alert("Movie was added successfully!");
+                document.getElementById('inputTitle').value = "";
+                document.getElementById('inputDescription').value = "";
+                closeModal();
+                await getMovies();
+            } else {
+                alert("There was an error adding the movie.");
+            }
+        }
+
+        async function getMovies() {
+            let queryParams = [];
+            let ordering = getParameterByName("ordering");
+            let filtering = getParameterByName("user_id")
+            if (ordering !== null) {
+                queryParams.push("ordering=" + ordering);
+            }
+            if (filtering !== null) {
+                queryParams.push("user_id=" + filtering);
+            }
+            let html = '';
+            let user_id = getCookie("user_id");
+            let movies = await fetchAPI("/api/movies?" + queryParams.join("&"), "GET");
+            if (movies.length > 0) {
+                document.getElementById('movies_count').innerHTML = '<p>Movies found: ' + movies.length + '</p>';
+                html = '';
+                movies.forEach(movie => {
+                    let htmlSegment = '<div class="col col-4"><div class="card">' +
+                        '<div class="card-header"><strong>' + movie.title + '</strong></div>' +
+                        '<div class="card-body">' +
+                        '<p class="card-text">' + movie.description + '</p>' +
+                        '<p class="card-text"> Likes: ' + movie.likes + ' | Hates: ' + movie.hates + '</p>';
+
+                    if (user_id !== null && movie.user.id !== parseInt(user_id)) {
+                        if (movie.vote === "like") {
+                            htmlSegment += '<p class="card-text">You liked this movie | <a class="card-link" href="javascript:unVote(' + movie.id + ');">Unlike</a>';
+                        } else if (movie.vote === "hate") {
+                            htmlSegment += '<p class="card-text">You hated this movie | <a class="card-link" href="javascript:unVote(' + movie.id + ');">Unhate</a>';
+                        } else if (movie.vote === null) {
+                            htmlSegment += '<p class="card-text"><a class="card-link" href="javascript:voteMovie(' + movie.id + ', \'like\');">Like</a> ' +
+                                '<a class="card-link" href="javascript:voteMovie(' + movie.id + ', \'hate\');">Hate</a></p>';
+                        }
+                    }
+                    htmlSegment += '</div>';
+
+                    htmlSegment += '<div class="card-footer text-muted">' +
+                        'Submitted by ' +
+                        '<a href="index.html?user_id=' + movie.user.id + '">' + movie.user.first_name + ' ' + movie.user.last_name + '</a>' +
+                        ' at ' + movie.created + '</div>';
+
+                    htmlSegment += '</div></div>';
+                    html += htmlSegment;
+                });
+            } else {
+                html += "<h3>No movies found</h3>";
+            }
+
+            document.getElementById('contents').innerHTML = html;
+        }
+
+        function openModal() {
+            document.getElementById("backdrop").style.display = "block"
+            document.getElementById("addMovieModal").style.display = "block"
+            document.getElementById("addMovieModal").className += "show"
+            document.getElementById("inputTitle").focus();
+        }
+
+        function closeModal() {
+            document.getElementById("backdrop").style.display = "none"
+            document.getElementById("addMovieModal").style.display = "none"
+            document.getElementById("addMovieModal").className += document.getElementById("addMovieModal").className.replace("show", "")
+        }
+    </script>
+</head>
+<body class="text-center container">
+<h1>Movies</h1>
+<div id="nav"></div>
+<p>Order by: Title <a href="index.html?ordering=title">&uArr;</a> <a href="index.html?ordering=-title">&dArr;</a> |
+    Created date <a href="index.html?ordering=created">&uArr;</a> <a href="index.html?ordering=-created">&dArr;</a> |
+    Likes <a href="index.html?ordering=likes">&uArr;</a> <a href="index.html?ordering=-likes">&dArr;</a> |
+    Hates <a href="index.html?ordering=hates">&uArr;</a> <a href="index.html?ordering=-hates">&dArr;<a>
+</p>
+<div id="movies_count"></div>
+
+<div class="row row-cols-1 row-cols-md-1" id="contents"></div>
+
+<div class="modal fade" id="addMovieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+     role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add movie</h5>
+                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <label for="inputTitle" class="sr-only">Title</label>
+                    <input type="text" id="inputTitle" class="form-control" placeholder="Title" required autofocus>
+                    <label for="inputDescription" class="sr-only">Password</label>
+                    <textarea id="inputDescription" class="form-control" placeholder="Description"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addMovie();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+</body>
+<script>
+    displayLogin();
+    getMovies();
+</script>
+</html>

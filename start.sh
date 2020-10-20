@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Ensure requirements met
+pipenv install --dev
+
 # Run migrations
 pipenv run python manage.py migrate
 

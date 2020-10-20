@@ -1,0 +1,1198 @@
+{
+	"info": {
+		"_postman_id": "b88b1a6f-4b97-47f6-a7f4-b30a1e0ae987",
+		"name": "Movierama",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"jane\",\n    \"password\": \"Testing-123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"jane\",\n    \"password\": \"Testing-123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 15:57:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwMzI5NTg1NiwianRpIjoiMjE3OWMxMmE2OGJlNDFmZjlhNmZkM2Y3Y2RkZTQ5MWQiLCJ1c2VyX2lkIjoxfQ.wwQgD84DCi0pxvGdnJPpGUSZjAY-d9sz1XZ4T_TcshY\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMDU2LCJqdGkiOiJiMWRjN2VlMmRjMGE0NTYwYTZlMzFhYjczZmQ1YmYzMyIsInVzZXJfaWQiOjF9.FFLsOFYWyKcuH7bQSCaqKqUPf5EJHchiu3CELlhbLAM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwMzI5NTg1NiwianRpIjoiMjE3OWMxMmE2OGJlNDFmZjlhNmZkM2Y3Y2RkZTQ5MWQiLCJ1c2VyX2lkIjoxfQ.wwQgD84DCi0pxvGdnJPpGUSZjAY-d9sz1XZ4T_TcshY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/token/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"token",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwMzI5NTg1NiwianRpIjoiMjE3OWMxMmE2OGJlNDFmZjlhNmZkM2Y3Y2RkZTQ5MWQiLCJ1c2VyX2lkIjoxfQ.wwQgD84DCi0pxvGdnJPpGUSZjAY-d9sz1XZ4T_TcshY\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/token/refresh",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"token",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 15:58:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMDg3LCJqdGkiOiI0MTEyNzdjMWY4NTY0MTYyOTZkN2U2YTg2YmVkNDQ5YSIsInVzZXJfaWQiOjF9.sZgDmKyfyU8Y0WQjyqetSfNSRPfWxURLXnoakXl054Q\",\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwMzI5NTg4NywianRpIjoiNDY2YjkzMTNjMjViNGQ2ZDk1YWM1NGJjYTcxMDUwM2UiLCJ1c2VyX2lkIjoxfQ.JA3HMARs9isEYvBEl4cSub9L5SiEQU6djKC4PAnbTik\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 15:58:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"first_name\": \"Kelly\",\n        \"last_name\": \"Doe\",\n        \"username\": \"kelly\",\n        \"email\": \"kelly@movierama.com\"\n    },\n    {\n        \"id\": 5,\n        \"first_name\": \"Mike\",\n        \"last_name\": \"Doe\",\n        \"username\": \"mike\",\n        \"email\": \"mike@movierama.com\"\n    },\n    {\n        \"id\": 3,\n        \"first_name\": \"George\",\n        \"last_name\": \"Doe\",\n        \"username\": \"george\",\n        \"email\": \"george@movierama.com\"\n    },\n    {\n        \"id\": 1,\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"username\": \"jane\",\n        \"email\": \"jane@movierama.com\"\n    },\n    {\n        \"id\": 2,\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"username\": \"john\",\n        \"email\": \"john@movierama.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"jane\",\n    \"first_name\": \"Jane\",\n    \"last_name\": \"Doe\",\n    \"email\": \"jane@movierama.com\",\n    \"password\": \"Testing-123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"jane\",\n    \"first_name\": \"Jane\",\n    \"last_name\": \"Doe\",\n    \"email\": \"jane@movierama.com\",\n    \"password\": \"Testing-123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 15:58:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"first_name\": \"Jane\",\n    \"last_name\": \"Doe\",\n    \"username\": \"jane\",\n    \"email\": \"jane@movierama.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/users/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 15:59:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"first_name\": \"Jane\",\n    \"last_name\": \"Doe\",\n    \"username\": \"jane\",\n    \"email\": \"jane@movierama.com\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "List movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/movies",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:00:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"title\": \"Shrek\",\n        \"description\": \"hello\",\n        \"created\": \"2020-10-20T15:20:27.516294Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 8,\n        \"title\": \"Up\",\n        \"description\": \"78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 2,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Tangled\",\n        \"description\": \"The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 10,\n        \"title\": \"How to train your dragon\",\n        \"description\": \"Launches gamers into a third-person action-adventure as a Viking hero where they must embark upon an epic quest to become the ultimate dragon trainer.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 2,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Minions\",\n        \"description\": \"Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain who, alongside her inventor husband Herb, hatches a plot to take over the world.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Megamind\",\n        \"description\": \"The supervillain Megamind finally defeats his nemesis, the superhero Metro Man. But without a hero, he loses all purpose and must find new meaning to his life.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Cloudy With A Chance Of Meatballs\",\n        \"description\": \"A local scientist is often regarded as a failure until he invents a machine that can make food fall from the sky. But little does he know, that things are about to take a turn for the worst.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 1,\n        \"title\": \"Madagascar\",\n        \"description\": \"A group of animals who have spent all their life in a New York zoo end up in the jungles of Madagascar, and must adjust to living in the wild.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 1,\n            \"first_name\": \"Jane\",\n            \"last_name\": \"Doe\",\n            \"username\": \"jane\",\n            \"email\": \"jane@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Ice Age\",\n        \"description\": \"Set during the Ice Age, a sabertooth tiger, a sloth, and a wooly mammoth find a lost human infant, and they try to return him to his tribe.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 1,\n            \"first_name\": \"Jane\",\n            \"last_name\": \"Doe\",\n            \"username\": \"jane\",\n            \"email\": \"jane@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Despicable me\",\n        \"description\": \"When a criminal mastermind uses a trio of orphan girls as pawns for a grand scheme, he finds their love is profoundly changing him for the better.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 4,\n        \"title\": \"The Penguins of Madagascar\",\n        \"description\": \"The daily adventures of penguins living in New York's Central Park Zoo.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    }\n]"
+						},
+						{
+							"name": "Success response (authenticated user)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/movies",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:01:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"title\": \"Shrek\",\n        \"description\": \"hello\",\n        \"created\": \"2020-10-20T15:20:27.516294Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 8,\n        \"title\": \"Up\",\n        \"description\": \"78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 2,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Tangled\",\n        \"description\": \"The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": \"like\"\n    },\n    {\n        \"id\": 10,\n        \"title\": \"How to train your dragon\",\n        \"description\": \"Launches gamers into a third-person action-adventure as a Viking hero where they must embark upon an epic quest to become the ultimate dragon trainer.\",\n        \"created\": \"2020-10-17T12:00:00Z\",\n        \"user\": {\n            \"id\": 4,\n            \"first_name\": \"Kelly\",\n            \"last_name\": \"Doe\",\n            \"username\": \"kelly\",\n            \"email\": \"kelly@movierama.com\"\n        },\n        \"likes\": 2,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Minions\",\n        \"description\": \"Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain who, alongside her inventor husband Herb, hatches a plot to take over the world.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": \"like\"\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Megamind\",\n        \"description\": \"The supervillain Megamind finally defeats his nemesis, the superhero Metro Man. But without a hero, he loses all purpose and must find new meaning to his life.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": \"hate\"\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Cloudy With A Chance Of Meatballs\",\n        \"description\": \"A local scientist is often regarded as a failure until he invents a machine that can make food fall from the sky. But little does he know, that things are about to take a turn for the worst.\",\n        \"created\": \"2020-10-16T12:00:00Z\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    },\n    {\n        \"id\": 1,\n        \"title\": \"Madagascar\",\n        \"description\": \"A group of animals who have spent all their life in a New York zoo end up in the jungles of Madagascar, and must adjust to living in the wild.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 1,\n            \"first_name\": \"Jane\",\n            \"last_name\": \"Doe\",\n            \"username\": \"jane\",\n            \"email\": \"jane@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Ice Age\",\n        \"description\": \"Set during the Ice Age, a sabertooth tiger, a sloth, and a wooly mammoth find a lost human infant, and they try to return him to his tribe.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 1,\n            \"first_name\": \"Jane\",\n            \"last_name\": \"Doe\",\n            \"username\": \"jane\",\n            \"email\": \"jane@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 1,\n        \"vote\": null\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Despicable me\",\n        \"description\": \"When a criminal mastermind uses a trio of orphan girls as pawns for a grand scheme, he finds their love is profoundly changing him for the better.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 1,\n        \"hates\": 0,\n        \"vote\": \"like\"\n    },\n    {\n        \"id\": 4,\n        \"title\": \"The Penguins of Madagascar\",\n        \"description\": \"The daily adventures of penguins living in New York's Central Park Zoo.\",\n        \"created\": \"2020-10-15T12:00:00Z\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"likes\": 0,\n        \"hates\": 0,\n        \"vote\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMjUzLCJqdGkiOiI4OTY4NWZhMmQwZWY0Y2RhYmNmMjIzNGFhOGY2YWI0NSIsInVzZXJfaWQiOjF9.JZLv_5QETqMiyhOigOgGzO52ZaBNH-IZhYmvWT0TXto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Zootopia\",\n    \"description\": \"In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Zootopia\",\n    \"description\": \"In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/movies",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:02:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"title\": \"Zootopia\",\n    \"description\": \"In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.\",\n    \"created\": \"2020-10-20T16:02:21.150130Z\",\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"username\": \"jane\",\n        \"email\": \"jane@movierama.com\"\n    },\n    \"vote\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "List votes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMjUzLCJqdGkiOiI4OTY4NWZhMmQwZWY0Y2RhYmNmMjIzNGFhOGY2YWI0NSIsInVzZXJfaWQiOjF9.JZLv_5QETqMiyhOigOgGzO52ZaBNH-IZhYmvWT0TXto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/movies/1/votes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"votes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/movies/1/votes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"votes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:02:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reaction\": \"hate\",\n        \"user\": {\n            \"id\": 3,\n            \"first_name\": \"George\",\n            \"last_name\": \"Doe\",\n            \"username\": \"george\",\n            \"email\": \"george@movierama.com\"\n        },\n        \"created\": \"2020-10-20T12:00:00Z\"\n    },\n    {\n        \"reaction\": \"like\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"username\": \"john\",\n            \"email\": \"john@movierama.com\"\n        },\n        \"created\": \"2020-10-19T12:00:00Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create vote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMjUzLCJqdGkiOiI4OTY4NWZhMmQwZWY0Y2RhYmNmMjIzNGFhOGY2YWI0NSIsInVzZXJfaWQiOjF9.JZLv_5QETqMiyhOigOgGzO52ZaBNH-IZhYmvWT0TXto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reaction\": \"like\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/movies/1/votes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"votes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reaction\": \"like\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/movies/1/votes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"votes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:03:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reaction\": \"like\",\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"username\": \"jane\",\n        \"email\": \"jane@movierama.com\"\n    },\n    \"created\": \"2020-10-20T16:03:20.999147Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update vote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMjUzLCJqdGkiOiI4OTY4NWZhMmQwZWY0Y2RhYmNmMjIzNGFhOGY2YWI0NSIsInVzZXJfaWQiOjF9.JZLv_5QETqMiyhOigOgGzO52ZaBNH-IZhYmvWT0TXto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reaction\": \"like\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/movies/1/votes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"votes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reaction\": \"like\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/movies/1/votes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"votes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:03:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reaction\": \"like\",\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"username\": \"jane\",\n        \"email\": \"jane@movierama.com\"\n    },\n    \"created\": \"2020-10-20T16:03:20.999147Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete vote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMjEzMjUzLCJqdGkiOiI4OTY4NWZhMmQwZWY0Y2RhYmNmMjIzNGFhOGY2YWI0NSIsInVzZXJfaWQiOjF9.JZLv_5QETqMiyhOigOgGzO52ZaBNH-IZhYmvWT0TXto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/movies/1/votes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"votes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/movies/1/votes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"votes"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 20 Oct 2020 16:04:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ff1579d-783e-433a-9743-71d9a74ca1cc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6dd6deda-096e-4214-bcdf-45b8e429f4fa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
